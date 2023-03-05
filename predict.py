@@ -13,7 +13,8 @@ import time
 import os
 import argparse
 import skimage
-from skimage.measure import compare_psnr, compare_ssim
+from skimage.metrics import peak_signal_noise_ratio as compare_psnr
+from skimage.metrics import structural_similarity as compare_ssim
 
 
 def get_args():
@@ -43,7 +44,7 @@ def align_to_four(img):
     img = img[0:a_row, 0:a_col]
     return img
 
-
+'''
 def predict(image):
     image = np.array(image, dtype='float32')/255.
     image = image.transpose((2, 0, 1))
@@ -59,7 +60,7 @@ def predict(image):
     out = out[0, :, :, :]*255.
     
     return out
-
+'''
 
 if __name__ == '__main__':
     args = get_args()

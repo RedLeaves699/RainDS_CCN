@@ -548,7 +548,7 @@ def prepare_data_aug_rain_dataset(data_path, patch_size, stride):
                     target_h5f.create_dataset(str(train_num), data=target_data_2)
                     train_num = train_num + 1
                     if input_data_1.shape[1] <=1 or input_data_2.shape[1] <=1 or target_data_1.shape[1] <=1 or target_data_2.shape[1] <=1:
-                        print('wrong', input_path,input_file)
+                        print('wrong', 'input_path',input_file) # modified
 
 
     target_h5f.close()

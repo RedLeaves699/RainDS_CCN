@@ -3,7 +3,8 @@ import torch
 import re
 import torch.nn as nn
 import numpy as np
-from skimage.measure.simple_metrics import compare_psnr
+from skimage.metrics import peak_signal_noise_ratio as compare_psnr # modified
+from skimage.metrics import structural_similarity as compare_ssim
 import  os
 import glob 
 

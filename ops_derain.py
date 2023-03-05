@@ -28,7 +28,8 @@ class ChannelAttention(nn.Module):
         super(ChannelAttention, self).__init__()
         self.avg_pool = nn.AdaptiveAvgPool2d(1)
         self.max_pool = nn.AdaptiveMaxPool2d(1)
-
+        # a SE_ResNet need in_planes = 64
+        in_planes = 64
         self.fc1   = nn.Conv2d(in_planes, in_planes // 16, 1, bias=False)
         self.relu1 = nn.ReLU()
         self.fc2   = nn.Conv2d(in_planes // 16, in_planes, 1, bias=False)
